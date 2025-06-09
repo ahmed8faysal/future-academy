@@ -1,4 +1,3 @@
-// Course data
 const coursesData = [
     {
         id: 1,
@@ -38,7 +37,6 @@ const coursesData = [
     }
 ];
 
-// Curriculum data
 const curriculumData = [
     {
         module: "HTML & CSS Fundamentals",
@@ -78,7 +76,6 @@ const curriculumData = [
     }
 ];
 
-// Reviews data
 const reviewsData = [
     {
         name: "Alex Chen",
@@ -100,7 +97,6 @@ const reviewsData = [
     }
 ];
 
-// Dashboard data
 const enrolledCoursesData = [
     {
         id: 1,
@@ -138,9 +134,7 @@ const achievementsData = [
     { title: "Course Collector", description: "Enrolled in 5+ courses", earned: false }
 ];
 
-// DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize page based on current page
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
     switch(currentPage) {
@@ -169,7 +163,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Mobile menu toggle
 function toggleMobileMenu() {
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileMenu) {
@@ -177,12 +170,10 @@ function toggleMobileMenu() {
     }
 }
 
-// Home page initialization
 function initHomePage() {
     renderCourses();
 }
 
-// Render courses on home page
 function renderCourses() {
     const coursesGrid = document.getElementById('coursesGrid');
     if (!coursesGrid) return;
@@ -220,39 +211,31 @@ function renderCourses() {
     `).join('');
 }
 
-// Course detail page initialization
 function initCourseDetailPage() {
     renderCurriculum();
     renderReviews();
     
-    // Show first tab by default
     showTab('overview');
 }
 
-// Tab functionality
 function showTab(tabName) {
-    // Hide all tab panes
     const tabPanes = document.querySelectorAll('.tab-pane');
     tabPanes.forEach(pane => pane.classList.remove('active'));
     
-    // Remove active class from all tab buttons
     const tabButtons = document.querySelectorAll('.tab-btn');
     tabButtons.forEach(btn => btn.classList.remove('active'));
     
-    // Show selected tab pane
     const selectedPane = document.getElementById(tabName);
     if (selectedPane) {
         selectedPane.classList.add('active');
     }
     
-    // Add active class to selected tab button
     const selectedButton = document.querySelector(`[onclick="showTab('${tabName}')"]`);
     if (selectedButton) {
         selectedButton.classList.add('active');
     }
 }
 
-// Render curriculum
 function renderCurriculum() {
     const curriculumContainer = document.getElementById('curriculumModules');
     if (!curriculumContainer) return;
@@ -280,7 +263,6 @@ function renderCurriculum() {
     `).join('');
 }
 
-// Render reviews
 function renderReviews() {
     const reviewsList = document.getElementById('reviewsList');
     if (!reviewsList) return;
@@ -303,14 +285,11 @@ function renderReviews() {
     `).join('');
 }
 
-// Enroll in course
 function enrollCourse() {
-    // Simulate enrollment process
     alert('Redirecting to payment page...');
     window.location.href = 'payment.html';
 }
 
-// Study guide page initialization
 function initStudyGuidePage() {
     const guideForm = document.getElementById('guideForm');
     if (guideForm) {
@@ -318,7 +297,6 @@ function initStudyGuidePage() {
     }
 }
 
-// Handle study guide generation
 function handleStudyGuideGeneration(e) {
     e.preventDefault();
     
@@ -333,13 +311,11 @@ function handleStudyGuideGeneration(e) {
         return;
     }
     
-    // Show loading state
     const generateBtn = document.getElementById('generateBtn');
     const originalText = generateBtn.innerHTML;
     generateBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Generating Your Study Guide...';
     generateBtn.disabled = true;
     
-    // Simulate AI generation
     setTimeout(() => {
         generateStudyGuide(topic, difficulty, learningStyle, timeAvailable);
         generateBtn.innerHTML = originalText;
@@ -347,7 +323,6 @@ function handleStudyGuideGeneration(e) {
     }, 3000);
 }
 
-// Generate study guide
 function generateStudyGuide(topic, difficulty, learningStyle, timeAvailable) {
     const studyGuideData = {
         title: `${topic} Study Guide`,
@@ -400,14 +375,11 @@ function generateStudyGuide(topic, difficulty, learningStyle, timeAvailable) {
         ]
     };
     
-    // Hide form and show generated guide
     document.getElementById('studyGuideForm').style.display = 'none';
     document.getElementById('generatedGuide').style.display = 'block';
     
-    // Update guide content
     document.getElementById('guideTitle').textContent = studyGuideData.title;
     
-    // Update badges
     const guideBadges = document.getElementById('guideBadges');
     guideBadges.innerHTML = `
         <span class="badge">${difficulty}</span>
@@ -415,7 +387,6 @@ function generateStudyGuide(topic, difficulty, learningStyle, timeAvailable) {
         <span class="badge badge-outline">${timeAvailable}</span>
     `;
     
-    // Render guide sections
     const guideSections = document.getElementById('guideSections');
     guideSections.innerHTML = studyGuideData.sections.map(section => `
         <div class="guide-section">
@@ -427,49 +398,39 @@ function generateStudyGuide(topic, difficulty, learningStyle, timeAvailable) {
     `).join('');
 }
 
-// Generate new study guide
 function generateNewGuide() {
     document.getElementById('generatedGuide').style.display = 'none';
     document.getElementById('studyGuideForm').style.display = 'block';
     
-    // Reset form
     document.getElementById('guideForm').reset();
 }
 
-// Dashboard page initialization
 function initDashboardPage() {
     renderEnrolledCourses();
     renderActivity();
     renderAchievements();
     
-    // Show first tab by default
     showDashboardTab('courses');
 }
 
-// Dashboard tab functionality
 function showDashboardTab(tabName) {
-    // Hide all tab panes
     const tabPanes = document.querySelectorAll('.tab-pane');
     tabPanes.forEach(pane => pane.classList.remove('active'));
     
-    // Remove active class from all tab buttons
     const tabButtons = document.querySelectorAll('.tab-btn');
     tabButtons.forEach(btn => btn.classList.remove('active'));
     
-    // Show selected tab pane
     const selectedPane = document.getElementById(tabName);
     if (selectedPane) {
         selectedPane.classList.add('active');
     }
     
-    // Add active class to selected tab button
     const selectedButton = document.querySelector(`[onclick="showDashboardTab('${tabName}')"]`);
     if (selectedButton) {
         selectedButton.classList.add('active');
     }
 }
 
-// Render enrolled courses
 function renderEnrolledCourses() {
     const enrolledCoursesContainer = document.getElementById('enrolledCourses');
     if (!enrolledCoursesContainer) return;
@@ -503,7 +464,6 @@ function renderEnrolledCourses() {
     `).join('');
 }
 
-// Render activity
 function renderActivity() {
     const activityList = document.getElementById('activityList');
     if (!activityList) return;
@@ -522,7 +482,6 @@ function renderActivity() {
     `).join('');
 }
 
-// Render achievements
 function renderAchievements() {
     const achievementsGrid = document.getElementById('achievementsGrid');
     if (!achievementsGrid) return;
@@ -541,7 +500,6 @@ function renderAchievements() {
     `).join('');
 }
 
-// Login page initialization
 function initLoginPage() {
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
@@ -549,7 +507,6 @@ function initLoginPage() {
     }
 }
 
-// Handle login
 function handleLogin(e) {
     e.preventDefault();
     
@@ -559,14 +516,12 @@ function handleLogin(e) {
     loginBtn.textContent = 'Signing in...';
     loginBtn.disabled = true;
     
-    // Simulate login process
     setTimeout(() => {
         alert('Login successful! Redirecting to dashboard...');
         window.location.href = 'dashboard.html';
     }, 2000);
 }
 
-// Signup page initialization
 function initSignupPage() {
     const signupForm = document.getElementById('signupForm');
     if (signupForm) {
@@ -574,7 +529,6 @@ function initSignupPage() {
     }
 }
 
-// Handle signup
 function handleSignup(e) {
     e.preventDefault();
     
@@ -592,14 +546,12 @@ function handleSignup(e) {
     signupBtn.textContent = 'Creating account...';
     signupBtn.disabled = true;
     
-    // Simulate signup process
     setTimeout(() => {
         alert('Account created successfully! Redirecting to dashboard...');
         window.location.href = 'dashboard.html';
     }, 2000);
 }
 
-// Payment page initialization
 function initPaymentPage() {
     const paymentForm = document.getElementById('paymentForm');
     if (paymentForm) {
@@ -607,7 +559,6 @@ function initPaymentPage() {
     }
 }
 
-// Handle payment
 function handlePayment(e) {
     e.preventDefault();
     
@@ -617,17 +568,14 @@ function handlePayment(e) {
     paymentBtn.innerHTML = '<div class="spinner"></div> Processing Payment...';
     paymentBtn.disabled = true;
     
-    // Simulate payment processing
     setTimeout(() => {
         paymentBtn.innerHTML = originalText;
         paymentBtn.disabled = false;
         
-        // Show success modal
         document.getElementById('successModal').style.display = 'flex';
     }, 3000);
 }
 
-// Close modal when clicking outside
 document.addEventListener('click', function(e) {
     const modal = document.getElementById('successModal');
     if (modal && e.target === modal) {
@@ -635,7 +583,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Smooth scrolling for anchor links
 document.addEventListener('click', function(e) {
     if (e.target.matches('a[href^="#"]')) {
         e.preventDefault();
@@ -649,7 +596,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Add loading animation to buttons
 document.addEventListener('click', function(e) {
     if (e.target.matches('.btn') && !e.target.disabled) {
         e.target.style.transform = 'translateY(-2px)';
@@ -659,7 +605,6 @@ document.addEventListener('click', function(e) {
     }
 });
 
-// Form validation helpers
 function validateEmail(email) {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
@@ -669,7 +614,6 @@ function validatePassword(password) {
     return password.length >= 8;
 }
 
-// Add real-time form validation
 document.addEventListener('input', function(e) {
     if (e.target.type === 'email') {
         const isValid = validateEmail(e.target.value);
@@ -682,7 +626,6 @@ document.addEventListener('input', function(e) {
     }
 });
 
-// Add intersection observer for animations
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -697,7 +640,6 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe elements for animation
 document.addEventListener('DOMContentLoaded', function() {
     const animatedElements = document.querySelectorAll('.course-card, .feature-card, .stat-card');
     animatedElements.forEach(el => {
