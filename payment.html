@@ -15,12 +15,34 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <i class="fas fa-book-open"></i>
                     <span>Ujjibon Future Academy</span>
                 </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Courses</a>
+                    <a href="study-guide.html" class="nav-link">Study Guide</a>
+                    <a href="https://www.ujjibonbd.com/talent-showcase" class="nav-link">Talent Showcase</a>
+                    <a href="https://www.ujjibonbd.com/" class="nav-link">Back Home</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="https://www.ujjibonbd.com/login" class="btn btn-outline">Sign In</a>
+                    <a href="https://www.ujjibonbd.com/register" class="btn btn-primary">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Courses</a>
+        <a href="study-guide.html" class="mobile-nav-link">Study Guide</a>
+        <a href="https://www.ujjibonbd.com/talent-showcase" class="mobile-nav-link">Talent Showcase</a>
+        <a href="https://www.ujjibonbd.com/login" class="mobile-nav-link">Sign In</a>
+        <a href="https://www.ujjibonbd.com/register" class="mobile-nav-link">Get Started</a>
+    </div>
+
 
     <div class="payment-container">
         <div class="container">
@@ -30,15 +52,6 @@
                 <div class="order-summary">
                     <div class="card">
                         <h3>Order Summary</h3>
-                        <label for="courseSelect">Choose Course:</label>
-                        <select id="courseSelect" onchange="updateOrderSummary()">
-                            <option value="">Select a course...</option>
-                            <option value="web-dev" data-price="15000" data-duration="40 hours" data-lessons="48">Complete Web Development Bootcamp</option>
-                            <option value="data-science" data-price="12000" data-duration="35 hours" data-lessons="42">Data Science with Python</option>
-                            <option value="digital-marketing" data-price="10000" data-duration="25 hours" data-lessons="32">Digital Marketing Mastery</option>
-                            <option value="ui-ux" data-price="14000" data-duration="30 hours" data-lessons="38">UI/UX Design Fundamentals</option>
-                        </select>
-
                         <div class="custom-course">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="customCourse" onchange="toggleCustomCourse()">
@@ -124,6 +137,17 @@
                                 </div>
                             </div>
 
+                            <div>
+                            <label for="courseSelect">Choose Course:</label>
+                            <select id="courseSelect" onchange="updateOrderSummary()">
+                                <option value="">Select a course...</option>
+                                <option value="web-dev" data-price="15000" data-duration="40 hours" data-lessons="48">Complete Web Development Bootcamp</option>
+                                <option value="data-science" data-price="12000" data-duration="35 hours" data-lessons="42">Data Science with Python</option>
+                                <option value="digital-marketing" data-price="10000" data-duration="25 hours" data-lessons="32">Digital Marketing Mastery</option>
+                                <option value="ui-ux" data-price="14000" data-duration="30 hours" data-lessons="38">UI/UX Design Fundamentals</option>
+                            </select>
+                            </div> <br>
+
                             <div class="security-notice">
                                 <i class="fas fa-lock"></i>
                                 <span>Your payment information is secure and encrypted</span>
@@ -131,7 +155,7 @@
 
                             <button type="submit" class="btn btn-primary btn-full" id="paymentBtn">
                                 <i class="fas fa-lock"></i>
-                                Complete Payment - $199
+                                Complete Payment - Request
                             </button>
 
                             <p class="payment-terms">By completing this purchase, you agree to our Terms of Service and Privacy Policy</p>
@@ -156,6 +180,50 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img class="hlogo1" src="/images/UJJIBON Official Logo (white).png">
+                    </div>
+                    <p>Empowering learners worldwide with expert-led courses and AI-powered study tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Ujjibon Future Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>

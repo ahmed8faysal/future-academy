@@ -2,51 +2,39 @@
 const coursesData = [
     {
         id: 1,
-        title: "Complete Web Development Bootcamp",
-        description: "Master HTML, CSS, JavaScript, React, and Node.js in this comprehensive course",
+        title: "Career Accelerator",
+        description: "Master to find the right path for you in this comprehensive course",
         price: 199,
         rating: 4.8,
         students: 12500,
         duration: "40 hours",
-        instructor: "Sarah Johnson",
-        image: "/images/course banner/cover 1.jpg",
-        category: "Web Development"
-    },
-    {
-        id: 2,
-        title: "Data Science with Python",
-        description: "Learn data analysis, machine learning, and visualization with Python",
-        price: 149,
-        rating: 4.9,
-        students: 8900,
-        duration: "35 hours",
-        instructor: "Dr. Michael Chen",
-        image: "/images/course banner/cover 2.jpg",
-        category: "Data Science"
-    },
-    {
-        id: 3,
-        title: "Digital Marketing Mastery",
-        description: "Complete guide to SEO, social media marketing, and online advertising",
-        price: 129,
-        rating: 4.7,
-        students: 15600,
-        duration: "25 hours",
-        instructor: "Emma Rodriguez",
-        image: "/images/course banner/cover 3.jpg",
-        category: "Marketing"
-    },
-    {
-        id: 4,
-        title: "UI/UX Design Fundamentals",
-        description: "Create beautiful and user-friendly interfaces with modern design principles",
-        price: 179,
-        rating: 4.8,
-        students: 7200,
-        duration: "30 hours",
-        instructor: "Alex Thompson",
+        instructor: "Dr. Faysal Ahmed",
         image: "/images/course banner/cover 4.jpg",
-        category: "Design"
+        category: "Career Development"
+    },
+    {
+        id: 1,
+        title: "Career Accelerator",
+        description: "Master to find the right path for you in this comprehensive course",
+        price: 199,
+        rating: 4.8,
+        students: 12500,
+        duration: "40 hours",
+        instructor: "Dr. Faysal Ahmed",
+        image: "/images/course banner/cover 3.jpg",
+        category: "Career Development"
+    },
+    {
+        id: 1,
+        title: "Career Accelerator",
+        description: "Master to find the right path for you in this comprehensive course",
+        price: 199,
+        rating: 4.8,
+        students: 12500,
+        duration: "40 hours",
+        instructor: "Dr. Faysal Ahmed",
+        image: "/images/course banner/cover 2.jpg",
+        category: "Career Development"
     }
 ];
 
