@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Ujjibon Future Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-book-open"></i>
+                    <span>Ujjibon Future Academy</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="payment-container">
+        <div class="container">
+            <div class="payment-grid">
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="card">
+                        <h3>Order Summary</h3>
+                        <label for="courseSelect">Choose Course:</label>
+                        <select id="courseSelect" onchange="updateOrderSummary()">
+                            <option value="">Select a course...</option>
+                            <option value="web-dev" data-price="15000" data-duration="40 hours" data-lessons="48">Complete Web Development Bootcamp</option>
+                            <option value="data-science" data-price="12000" data-duration="35 hours" data-lessons="42">Data Science with Python</option>
+                            <option value="digital-marketing" data-price="10000" data-duration="25 hours" data-lessons="32">Digital Marketing Mastery</option>
+                            <option value="ui-ux" data-price="14000" data-duration="30 hours" data-lessons="38">UI/UX Design Fundamentals</option>
+                        </select>
+
+                        <div class="custom-course">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="customCourse" onchange="toggleCustomCourse()">
+                                Request a custom course
+                            </label> 
+                        </div> <br>
+
+                        <div>
+                            <h4>Order Process</h4>
+                            <h5>
+                                <li>Pay with bKash mobile app</li>
+                                <li>While payment, add your email address in reference</li>
+                                <li>Accourding to your info fill up this form</li>
+                                <li>Select the course here for which you make payment</li>
+                            </h5>
+                            <br>
+                            <h4><b>Note</b></h4>
+                            <p>After reviwing you payment our team will give you the course access within 24 business hours. Thank you.</p>
+                        </div>
+                        <br>
+                        <div class="included-features">
+                            <h4>What's Included:</h4>
+                            <ol>
+                                <li>Lifetime access to course materials</li>
+                                <li>40+ hours of video content</li>
+                                <li>Downloadable resources</li>
+                                <li>Certificate of completion</li>
+                                <li>AI-powered study guides</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Payment Form -->
+                <div class="payment-form">
+                    <div class="card">
+                        <h3><i class="fas fa-credit-card"></i> Payment Information</h3>
+                        <p>Enter your payment details to complete your enrollment</p>
+                        <br>
+                        
+                        <form id="paymentForm">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="ujjibon@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cardNumber">bKash Number</label>
+                                <input type="text" id="cardNumber" placeholder="01XXXXXXXXX" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="expiry">TID</label>
+                                    <input type="text" id="expiry" placeholder="CF4578TUCV" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cvc">Time</label>
+                                    <input type="text" id="cvc" placeholder="01:36pm" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cardName">Account Owner Name</label>
+                                <input type="text" id="cardName" placeholder="Ujjibon" required>
+                            </div>
+
+                            <div class="form-divider"></div>
+
+                            <div class="form-group">
+                                <label for="address">Billing Address</label>
+                                <input type="text" id="address" placeholder="394/3 Baily Road, Shantinagar" required>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" placeholder="Dhaka" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zip">ZIP Code</label>
+                                    <input type="text" id="zip" placeholder="1217" required>
+                                </div>
+                            </div>
+
+                            <div class="security-notice">
+                                <i class="fas fa-lock"></i>
+                                <span>Your payment information is secure and encrypted</span>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-full" id="paymentBtn">
+                                <i class="fas fa-lock"></i>
+                                Complete Payment - $199
+                            </button>
+
+                            <p class="payment-terms">By completing this purchase, you agree to our Terms of Service and Privacy Policy</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Success Modal -->
+    <div class="modal" id="successModal" style="display: none;">
+        <div class="modal-content">
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>Payment Successful!</h2>
+                <p>Welcome to the Complete Web Development Bootcamp. You can now access all course materials.</p>
+                <div class="success-actions">
+                    <a href="course-detail.html" class="btn btn-primary">Start Learning</a>
+                    <a href="dashboard.html" class="btn btn-outline">Go to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

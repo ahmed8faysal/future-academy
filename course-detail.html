@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details - Ujjibon Future Academy</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+   <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <span>Ujjibon Future Academy</span>
+                </div>
+                <nav class="nav">
+                    <a href="index.html" class="nav-link active">Courses</a>
+                    <a href="study-guide.html" class="nav-link">Study Guide</a>
+                    <a href="https://www.ujjibonbd.com/talent-showcase" class="nav-link">Talent Showcase</a>
+                    <a href="https://www.ujjibonbd.com/" class="nav-link">Back Home</a>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="https://www.ujjibonbd.com/login" class="btn btn-outline">Sign In</a>
+                    <a href="https://www.ujjibonbd.com/register" class="btn btn-primary">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Courses</a>
+        <a href="study-guide.html" class="mobile-nav-link">Study Guide</a>
+        <a href="https://www.ujjibonbd.com/talent-showcase" class="mobile-nav-link">Talent Showcase</a>
+        <a href="https://www.ujjibonbd.com/login" class="mobile-nav-link">Sign In</a>
+        <a href="https://www.ujjibonbd.com/register" class="mobile-nav-link">Get Started</a>
+    </div>
+
+    <div class="course-detail-container">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                Back to Courses
+            </a>
+
+            <div class="course-detail-grid">
+                <!-- Main Content -->
+                <div class="course-main">
+                    <div class="course-header">
+                        <span class="course-category">Web Development</span>
+                        <h1 id="courseTitle">Complete Web Development Bootcamp</h1>
+                        <p id="courseDescription">Master HTML, CSS, JavaScript, React, and Node.js in this comprehensive course designed for beginners and intermediate developers.</p>
+                        
+                        <div class="course-meta">
+                            <div class="meta-item">
+                                <i class="fas fa-star"></i>
+                                <span>4.8 (12,500 students)</span>
+                            </div>
+                            <div class="meta-item">
+                                <i class="fas fa-clock"></i>
+                                <span>40 hours</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="course-image">
+                        <img src="/images/course banner/cover 1.jpg" alt="Course Preview">
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="tabs">
+                        <div class="tab-buttons">
+                            <button class="tab-btn active" onclick="showTab('overview')">Overview</button>
+                            <button class="tab-btn" onclick="showTab('curriculum')">Curriculum</button>
+                            <button class="tab-btn" onclick="showTab('instructor')">Instructor</button>
+                            <button class="tab-btn" onclick="showTab('reviews')">Reviews</button>
+                        </div>
+
+                        <div class="tab-content">
+                            <div id="overview" class="tab-pane active">
+                                <div class="card">
+                                    <h3>Learning Objectives</h3>
+                                    <ul class="objectives-list">
+                                        <li><i class="fas fa-check-circle"></i> Build responsive websites using HTML5 and CSS3</li>
+                                        <li><i class="fas fa-check-circle"></i> Master JavaScript fundamentals and ES6+ features</li>
+                                        <li><i class="fas fa-check-circle"></i> Create dynamic web applications with React</li>
+                                        <li><i class="fas fa-check-circle"></i> Develop backend APIs using Node.js and Express</li>
+                                        <li><i class="fas fa-check-circle"></i> Work with databases and authentication systems</li>
+                                        <li><i class="fas fa-check-circle"></i> Deploy applications to production environments</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div id="curriculum" class="tab-pane">
+                                <div class="curriculum-modules" id="curriculumModules">
+                                    <!-- Curriculum will be populated by JavaScript -->
+                                </div>
+                            </div>
+
+                            <div id="instructor" class="tab-pane">
+                                <div class="card">
+                                    <div class="instructor-info">
+                                        <img src="https://via.placeholder.com/80x80/FFA500/000000?text=SJ" alt="Sarah Johnson" class="instructor-avatar">
+                                        <div>
+                                            <h3>Sarah Johnson</h3>
+                                            <p>Senior Full Stack Developer with 8+ years of experience at top tech companies. Passionate about teaching and helping others break into tech.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="reviews" class="tab-pane">
+                                <div class="reviews-list" id="reviewsList">
+                                    <!-- Reviews will be populated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="course-sidebar">
+                    <div class="sidebar-card">
+                        <div class="price">$199</div>
+                        <button class="btn btn-primary btn-full" onclick="enrollCourse()">Enroll Now</button>
+                        <a href="study-guide.html" class="btn btn-outline btn-full">Generate Study Guide</a>
+                        
+                        <div class="course-info">
+                            <div class="info-item">
+                                <span>Total Lessons:</span>
+                                <span>16</span>
+                            </div>
+                            <div class="info-item">
+                                <span>Duration:</span>
+                                <span>40 hours</span>
+                            </div>
+                            <div class="info-item">
+                                <span>Students:</span>
+                                <span>12,500</span>
+                            </div>
+                            <div class="info-item">
+                                <span>Rating:</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                            </div>
+                        </div>
+
+                        <div class="progress-section">
+                            <h4>Course Progress</h4>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                            <p>0 of 16 lessons completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span>Ujjibon Future Academy</span>
+                    </div>
+                    <p>Empowering learners worldwide with expert-led courses and AI-powered study tools.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Data Science</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Design</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ujjibon Future Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
