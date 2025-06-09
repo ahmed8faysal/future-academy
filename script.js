@@ -8,7 +8,7 @@ const coursesData = [
         students: 12500,
         duration: "40 hours",
         instructor: "Dr. Faysal Ahmed",
-        image: "/images/course banner/cover 4.jpg",
+        image: "https://i.postimg.cc/CxMQHLmw/cover-4.jpg",
         category: "Career Development"
     },
     {
@@ -20,7 +20,7 @@ const coursesData = [
         students: 12500,
         duration: "40 hours",
         instructor: "Dr. Faysal Ahmed",
-        image: "/images/course banner/cover 3.jpg",
+        image: "https://i.postimg.cc/fyY7M8sm/cover-3.jpg",
         category: "Career Development"
     },
     {
@@ -32,7 +32,7 @@ const coursesData = [
         students: 12500,
         duration: "40 hours",
         instructor: "Dr. Faysal Ahmed",
-        image: "/images/course banner/cover 2.jpg",
+        image: "https://i.postimg.cc/wB3h1qH6/cover-2.jpg",
         category: "Career Development"
     }
 ];
